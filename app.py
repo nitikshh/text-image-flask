@@ -10,7 +10,7 @@ app = Flask(__name__)
 # Load the pre-trained model
 model_id = "CompVis/stable-diffusion-v-1-4"
 try:
-    pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16).to("cuda")
+    pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16).to("cpu")
 except Exception as e:
     print(f"Error loading model: {e}")
     exit(1)
