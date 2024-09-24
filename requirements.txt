@@ -1,6 +1,6 @@
 Flask 
 torch 
-torchvision==0.15.2+cu117
-torchaudio==2.0.2+cu117
+torchvision 
+torchaudio 
 diffusers 
 Pillow 
