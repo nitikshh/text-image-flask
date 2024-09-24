@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify
 from PIL import Image
+import io
+import os
 import torch
 from diffusers import StableDiffusionPipeline
 
@@ -23,5 +25,6 @@ def generate_image():
     
     return jsonify({'image_url': image_path})
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port, debug=False)
